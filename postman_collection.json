@@ -1,0 +1,198 @@
+{
+  "info": {
+    "name": "Query Executor API",
+    "_postman_id": "query-executor-collection",
+    "description": "Collection for testing the Query Executor Service API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Create Query - Simple SELECT",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"query\": \"SELECT * FROM passengers WHERE PassengerId <= 5\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/queries",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["queries"]
+        },
+        "description": "Create a simple SELECT query"
+      },
+      "response": []
+    },
+    {
+      "name": "2. Create Query - Aggregation",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"query\": \"SELECT Pclass, COUNT(*) as count FROM passengers GROUP BY Pclass\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/queries",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["queries"]
+        },
+        "description": "Create an aggregation query"
+      },
+      "response": []
+    },
+    {
+      "name": "3. List All Queries",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/queries",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["queries"]
+        },
+        "description": "Get all stored queries"
+      },
+      "response": []
+    },
+    {
+      "name": "4. Execute Query (Sync)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/queries/execute?query=1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["queries", "execute"],
+          "query": [
+            {
+              "key": "query",
+              "value": "1",
+              "description": "Query ID to execute"
+            }
+          ]
+        },
+        "description": "Execute a stored query synchronously"
+      },
+      "response": []
+    },
+    {
+      "name": "5. Execute Query (Async)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/queries/execute/async?query=1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["queries", "execute", "async"],
+          "query": [
+            {
+              "key": "query",
+              "value": "1",
+              "description": "Query ID to execute"
+            }
+          ]
+        },
+        "description": "Start async query execution"
+      },
+      "response": []
+    },
+    {
+      "name": "6. Check Async Status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/queries/execute/async/{{executionId}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["queries", "execute", "async", "{{executionId}}"]
+        },
+        "description": "Check status of async query (replace {{executionId}} with actual ID)"
+      },
+      "response": []
+    },
+    {
+      "name": "7. Try Invalid Query (UPDATE - Should Fail)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"query\": \"UPDATE passengers SET Name = 'Hacked' WHERE PassengerId = 1\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/queries",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["queries"]
+        },
+        "description": "Try to create a query that modifies data (should be allowed to store but fail on execution)"
+      },
+      "response": []
+    },
+    {
+      "name": "8. Execute Invalid Query (Should Fail)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/queries/execute?query=3",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["queries", "execute"],
+          "query": [
+            {
+              "key": "query",
+              "value": "3",
+              "description": "ID of the UPDATE query - should fail with 'forbidden keyword' error"
+            }
+          ]
+        },
+        "description": "Try to execute a query with forbidden keywords"
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080",
+      "type": "string"
+    },
+    {
+      "key": "executionId",
+      "value": "replace-with-actual-execution-id",
+      "type": "string"
+    }
+  ]
+}

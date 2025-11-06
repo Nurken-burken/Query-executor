@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - QueryExecutorIntegrationTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>QueryExecutorIntegrationTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.example.queryexecutor.integration.html">com.example.queryexecutor.integration</a> &gt; QueryExecutorIntegrationTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">6</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">1.209s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">asyncExecution_FullWorkflow()</td>
+<td class="success">1.033s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">caching_ExecuteSameQueryTwice_ShouldUseCachedResults()</td>
+<td class="success">0.015s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">createQuery_ThenTryToModifyData_ShouldFail()</td>
+<td class="success">0.037s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">executeQuery_InvalidQueryId_ShouldReturn404()</td>
+<td class="success">0.041s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">executeQuery_WithAggregation_ShouldReturnResults()</td>
+<td class="success">0.010s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">fullWorkflow_CreateListAndExecuteQuery()</td>
+<td class="success">0.073s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>2025-11-06T16:26:10.523+01:00  INFO 72158 --- [query-executor] [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.queryexecutor.integration.QueryExecutorIntegrationTest]: QueryExecutorIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-11-06T16:26:10.531+01:00  INFO 72158 --- [query-executor] [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.queryexecutor.QueryExecutorApplication for test class com.example.queryexecutor.integration.QueryExecutorIntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2025-11-06T16:26:10.546+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.i.QueryExecutorIntegrationTest     : Starting QueryExecutorIntegrationTest using Java 21.0.5 with PID 72158 (started by nurkensamigullin in /Users/nurkensamigullin/Downloads/query-executor)
+2025-11-06T16:26:10.547+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.i.QueryExecutorIntegrationTest     : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2025-11-06T16:26:10.677+01:00  INFO 72158 --- [query-executor] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-06T16:26:10.698+01:00  INFO 72158 --- [query-executor] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 1 JPA repository interface.
+2025-11-06T16:26:10.826+01:00  INFO 72158 --- [query-executor] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-06T16:26:10.855+01:00  INFO 72158 --- [query-executor] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-11-06T16:26:10.870+01:00  INFO 72158 --- [query-executor] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-06T16:26:10.920+01:00  INFO 72158 --- [query-executor] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-06T16:26:10.934+01:00  INFO 72158 --- [query-executor] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-06T16:26:11.029+01:00  INFO 72158 --- [query-executor] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:querydb user=SA
+2025-11-06T16:26:11.030+01:00  INFO 72158 --- [query-executor] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-06T16:26:11.043+01:00  WARN 72158 --- [query-executor] [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-06T16:26:11.355+01:00  INFO 72158 --- [query-executor] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: create table stored_queries (id bigint generated by default as identity, created_at timestamp(6) not null, query TEXT not null, primary key (id))
+2025-11-06T16:26:11.382+01:00  INFO 72158 --- [query-executor] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-06T16:26:11.574+01:00  WARN 72158 --- [query-executor] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-06T16:26:11.688+01:00  INFO 72158 --- [query-executor] [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:querydb'
+2025-11-06T16:26:11.718+01:00  INFO 72158 --- [query-executor] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-11-06T16:26:11.718+01:00  INFO 72158 --- [query-executor] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-11-06T16:26:11.719+01:00  INFO 72158 --- [query-executor] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-11-06T16:26:11.725+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.i.QueryExecutorIntegrationTest     : Started QueryExecutorIntegrationTest in 1.19 seconds (process running for 3.193)
+2025-11-06T16:26:11.726+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.queryexecutor.config.DatabaseConfig  : Passengers table created
+2025-11-06T16:26:11.734+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.queryexecutor.config.DatabaseConfig  : Loaded 5 passenger records
+2025-11-06T16:26:11.734+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.queryexecutor.config.DatabaseConfig  : Titanic dataset loaded successfully
+2025-11-06T16:26:11.738+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.controller.QueryController         : GET /queries/execute?query=99999 - Executing query
+2025-11-06T16:26:11.752+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.queryexecutor.service.QueryService   : Fetching query with ID: 99999
+Hibernate: select sq1_0.id,sq1_0.created_at,sq1_0.query from stored_queries sq1_0 where sq1_0.id=?
+2025-11-06T16:26:11.782+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.controller.QueryController         : POST /queries - Creating new query
+2025-11-06T16:26:11.782+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.queryexecutor.service.QueryService   : Creating new query: UPDATE passengers SET Name = 'Hacked' WHERE PassengerId = 1
+Hibernate: insert into stored_queries (created_at,query,id) values (?,?,default)
+2025-11-06T16:26:11.800+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.queryexecutor.service.QueryService   : Query saved with ID: 1
+2025-11-06T16:26:11.807+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.controller.QueryController         : GET /queries/execute?query=1 - Executing query
+2025-11-06T16:26:11.807+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.queryexecutor.service.QueryService   : Fetching query with ID: 1
+Hibernate: select sq1_0.id,sq1_0.created_at,sq1_0.query from stored_queries sq1_0 where sq1_0.id=?
+2025-11-06T16:26:11.810+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.service.QueryExecutionService      : Executing query ID 1: UPDATE passengers SET Name = 'Hacked' WHERE PassengerId = 1
+2025-11-06T16:26:11.816+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.controller.QueryController         : POST /queries - Creating new query
+2025-11-06T16:26:11.816+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.queryexecutor.service.QueryService   : Creating new query: SELECT * FROM passengers WHERE PassengerId = 1
+Hibernate: insert into stored_queries (created_at,query,id) values (?,?,default)
+2025-11-06T16:26:11.817+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.queryexecutor.service.QueryService   : Query saved with ID: 2
+2025-11-06T16:26:11.819+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.controller.QueryController         : GET /queries/execute?query=2 - Executing query
+2025-11-06T16:26:11.820+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.queryexecutor.service.QueryService   : Fetching query with ID: 2
+Hibernate: select sq1_0.id,sq1_0.created_at,sq1_0.query from stored_queries sq1_0 where sq1_0.id=?
+2025-11-06T16:26:11.820+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.service.QueryExecutionService      : Executing query ID 2: SELECT * FROM passengers WHERE PassengerId = 1
+2025-11-06T16:26:11.822+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.service.QueryExecutionService      : Query executed successfully, returned 1 rows
+2025-11-06T16:26:11.827+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.controller.QueryController         : GET /queries/execute?query=2 - Executing query
+2025-11-06T16:26:11.831+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.controller.QueryController         : POST /queries - Creating new query
+2025-11-06T16:26:11.831+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.queryexecutor.service.QueryService   : Creating new query: SELECT Pclass, COUNT(*) as count FROM passengers GROUP BY Pclass
+Hibernate: insert into stored_queries (created_at,query,id) values (?,?,default)
+2025-11-06T16:26:11.832+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.queryexecutor.service.QueryService   : Query saved with ID: 3
+2025-11-06T16:26:11.834+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.controller.QueryController         : GET /queries/execute?query=3 - Executing query
+2025-11-06T16:26:11.835+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.queryexecutor.service.QueryService   : Fetching query with ID: 3
+Hibernate: select sq1_0.id,sq1_0.created_at,sq1_0.query from stored_queries sq1_0 where sq1_0.id=?
+2025-11-06T16:26:11.835+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.service.QueryExecutionService      : Executing query ID 3: SELECT Pclass, COUNT(*) as count FROM passengers GROUP BY Pclass
+2025-11-06T16:26:11.837+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.service.QueryExecutionService      : Query executed successfully, returned 2 rows
+2025-11-06T16:26:11.841+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.controller.QueryController         : POST /queries - Creating new query
+2025-11-06T16:26:11.841+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.queryexecutor.service.QueryService   : Creating new query: SELECT COUNT(*) FROM passengers
+Hibernate: insert into stored_queries (created_at,query,id) values (?,?,default)
+2025-11-06T16:26:11.842+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.queryexecutor.service.QueryService   : Query saved with ID: 4
+2025-11-06T16:26:11.844+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.controller.QueryController         : POST /queries/execute/async?query=4 - Starting async execution
+2025-11-06T16:26:11.844+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.queryexecutor.service.QueryService   : Fetching query with ID: 4
+Hibernate: select sq1_0.id,sq1_0.created_at,sq1_0.query from stored_queries sq1_0 where sq1_0.id=?
+2025-11-06T16:26:11.845+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.service.QueryExecutionService      : Executing query ID 4: SELECT COUNT(*) FROM passengers
+2025-11-06T16:26:11.845+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.service.QueryExecutionService      : Query executed successfully, returned 1 rows
+2025-11-06T16:26:11.845+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.service.QueryExecutionService      : Async query execution 4ab5e229-51ea-4860-a681-afda0dc7ed3f completed successfully
+2025-11-06T16:26:12.862+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.controller.QueryController         : GET /queries/execute/async/4ab5e229-51ea-4860-a681-afda0dc7ed3f - Fetching async query status
+2025-11-06T16:26:12.904+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.controller.QueryController         : POST /queries - Creating new query
+2025-11-06T16:26:12.904+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.queryexecutor.service.QueryService   : Creating new query: SELECT * FROM passengers WHERE PassengerId &lt;= 3
+Hibernate: insert into stored_queries (created_at,query,id) values (?,?,default)
+2025-11-06T16:26:12.906+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.queryexecutor.service.QueryService   : Query saved with ID: 5
+2025-11-06T16:26:12.909+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.controller.QueryController         : GET /queries - Fetching all queries
+2025-11-06T16:26:12.909+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.queryexecutor.service.QueryService   : Fetching all stored queries
+Hibernate: select sq1_0.id,sq1_0.created_at,sq1_0.query from stored_queries sq1_0
+2025-11-06T16:26:12.969+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.controller.QueryController         : GET /queries/execute?query=5 - Executing query
+2025-11-06T16:26:12.969+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.queryexecutor.service.QueryService   : Fetching query with ID: 5
+Hibernate: select sq1_0.id,sq1_0.created_at,sq1_0.query from stored_queries sq1_0 where sq1_0.id=?
+2025-11-06T16:26:12.971+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.service.QueryExecutionService      : Executing query ID 5: SELECT * FROM passengers WHERE PassengerId &lt;= 3
+2025-11-06T16:26:12.971+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.service.QueryExecutionService      : Query executed successfully, returned 3 rows
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.5</a> at 6 Nov 2025, 16:26:13</p>
+</div>
+</div>
+</body>
+</html>

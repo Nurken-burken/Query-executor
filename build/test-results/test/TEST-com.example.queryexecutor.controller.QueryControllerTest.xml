@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.queryexecutor.controller.QueryControllerTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2025-11-06T15:26:10" hostname="dhcp-10-224-22-211.in.fit.cvut.cz" time="0.193">
+  <properties/>
+  <testcase name="getAllQueries_ShouldReturnQueryList()" classname="com.example.queryexecutor.controller.QueryControllerTest" time="0.095"/>
+  <testcase name="createQuery_EmptyQuery_ShouldReturn400()" classname="com.example.queryexecutor.controller.QueryControllerTest" time="0.055"/>
+  <testcase name="executeQuery_ValidQueryId_ShouldReturnResults()" classname="com.example.queryexecutor.controller.QueryControllerTest" time="0.014"/>
+  <testcase name="executeQueryAsync_ShouldReturnExecutionId()" classname="com.example.queryexecutor.controller.QueryControllerTest" time="0.006"/>
+  <testcase name="getAsyncQueryStatus_ValidExecutionId_ShouldReturnStatus()" classname="com.example.queryexecutor.controller.QueryControllerTest" time="0.011"/>
+  <testcase name="createQuery_ValidRequest_ShouldReturn201()" classname="com.example.queryexecutor.controller.QueryControllerTest" time="0.006"/>
+  <system-out><![CDATA[Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+16:26:08.939 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.queryexecutor.controller.QueryControllerTest]: QueryControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+16:26:09.000 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.queryexecutor.QueryExecutorApplication for test class com.example.queryexecutor.controller.QueryControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2025-11-06T16:26:09.163+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.controller.QueryControllerTest     : Starting QueryControllerTest using Java 21.0.5 with PID 72158 (started by nurkensamigullin in /Users/nurkensamigullin/Downloads/query-executor)
+2025-11-06T16:26:09.164+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.controller.QueryControllerTest     : No active profile set, falling back to 1 default profile: "default"
+2025-11-06T16:26:10.297+01:00  INFO 72158 --- [query-executor] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-11-06T16:26:10.297+01:00  INFO 72158 --- [query-executor] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-11-06T16:26:10.298+01:00  INFO 72158 --- [query-executor] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-11-06T16:26:10.318+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.controller.QueryControllerTest     : Started QueryControllerTest in 1.281 seconds (process running for 1.786)
+2025-11-06T16:26:10.361+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.controller.QueryController         : GET /queries - Fetching all queries
+2025-11-06T16:26:10.486+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.controller.QueryController         : GET /queries/execute?query=1 - Executing query
+2025-11-06T16:26:10.495+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.controller.QueryController         : POST /queries/execute/async?query=1 - Starting async execution
+2025-11-06T16:26:10.506+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.controller.QueryController         : GET /queries/execute/async/test-execution-id - Fetching async query status
+2025-11-06T16:26:10.515+01:00  INFO 72158 --- [query-executor] [    Test worker] c.e.q.controller.QueryController         : POST /queries - Creating new query
+]]></system-out>
+  <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (/Users/nurkensamigullin/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.14.10/90ed94ac044ea8953b224304c762316e91fd6b31/byte-buddy-agent-1.14.10.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>
